@@ -1,0 +1,48 @@
+import random
+
+durchgang = 0
+
+zufallszahl = random.randint(0,100)
+
+while durchgang < 7:
+    durchgang = durchgang + 1
+    print(' Dies ist Durchgang Nr. ' + str(durchgang))
+    print('Geben Sie eine Zahl zwischen 0 und 100 ein')
+    benutzereingabe = int(input('Bitte Zahl eingeben: '))
+    if benutzereingabe > zufallszahl:
+        print('  ')
+        print('Die Zahl ist zu groß')
+        print('  ')
+    elif benutzereingabe < zufallszahl:
+        print('  ')
+        print('Die Zahl ist zu klein')
+        print('  ')
+    else:
+        print('Sie haben die richtige Zahl erraten!')
+        print('Möchten Sie erneut spielen?')
+        benutzereingabe1 = int(input('Tippen Sie 0 für nein und 1 für ja: '))
+        if benutzereingabe1 == 1:
+            del(durchgang)
+            durchgang = 0
+            del(zufallszahl)
+            zufallszahl = random.randint(0,100)
+        if benutzereingabe1 == 0:
+            print('Auf Wiedersehen!')
+            break
+
+    if durchgang == 7:
+        print('Verloooooooren!')
+        aktiv = True
+        while aktiv:
+            print('Möchten Sie erneut spielen?')
+            benutzereingabe1 = int(input('Tippen Sie 0 für nein und 1 für ja: '))
+            if benutzereingabe1 == 1:
+                del(durchgang)
+                durchgang = 0
+                del(zufallszahl)
+                zufallszahl = random.randint(0,100)
+            if benutzereingabe1 == 0:
+                print('Auf Wiedersehen!')
+                aktiv = False
+                break
+print('Das Spiel ist zu Ende!')
