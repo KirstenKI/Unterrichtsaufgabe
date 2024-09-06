@@ -49,6 +49,6 @@ while durchgang < 7:
                 aktiv = False
                 break
 print('Das Spiel ist zu Ende!')
-
+print('Versuch')
         
     
